@@ -1,9 +1,9 @@
 {
-    "name": "pascal",
-    "displayName": "Pascal",
-    "description": "Pascal language support for Visual Studio Code",
-    "version": "7.0.0",
-    "publisher": "alefragnani",
+    "name": "blackboxcomponentbuilder",
+    "displayName": "blackboxcomponentbuilder",
+    "description": "Режим blackboxcomponentbuilder (компонентный Паскаль, component pascal) для Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "budden",
     "galleryBanner": {
         "color": "#4682B4",
         "theme": "dark"
@@ -18,89 +18,81 @@
         "Other"
     ],
     "keywords": [
-        "pascal",
-        "delphi",
-        "freepascal",
-        "lazarus",
-        "formatter",
+        "blackboxcomponentbuilder",
+        "componentpascal",
         "multi-root ready"
     ],
     "activationEvents": [
-        "onLanguage:pascal",
-        "onCommand:pascal.editFormatterParameters",
-        "onCommand:pascal.generateTags",
-        "onCommand:pascal.updateTags",
-        "onCommand:pascal.whatsNew",
+        "onLanguage:blackboxcomponentbuilder",
+        "onCommand:blackboxcomponentbuilder.editFormatterParameters",
+        "onCommand:blackboxcomponentbuilder.generateTags",
+        "onCommand:blackboxcomponentbuilder.updateTags",
+        "onCommand:blackboxcomponentbuilder.whatsNew",
         "*"
     ],
     "main": "./out/src/extension",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE.md",
-    "homepage": "https://github.com/alefragnani/vscode-language-pascal/blob/master/README.md",
+    "homepage": "https://github.com/budden/vscode-language-blackboxcomponentbuilder/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/alefragnani/vscode-language-pascal.git"
+        "url": "https://github.com/budden/vscode-language-blackboxcomponentbuilder.git"
     },
     "bugs": {
-        "url": "https://github.com/alefragnani/vscode-language-pascal/issues"
+        "url": "https://github.com/budden/vscode-language-blackboxcomponentbuilder/issues"
     },
     "contributes": {
         "languages": [
             {
-                "id": "pascal",
+                "id": "blackboxcomponentbuilder",
                 "aliases": [
-                    "Pascal",
-                    "pascal"
+                    "BlackBoxComponentBuilder",
+                    "Component pascal",
+                    "blackboxcomponentbuilder"
                 ],
                 "extensions": [
-                    ".pas",
-                    ".p",
-                    ".dfm",
-                    ".dpr",
-                    ".dpk",
-                    ".lfm",
-                    ".dpr",
-                    ".lpr"
+                    ".kp",
+                    ".cp"
                 ],
-                "configuration": "./pascal.configuration.json"
+                "configuration": "./blackboxcomponentbuilder.configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "pascal",
-                "scopeName": "source.pascal",
-                "path": "./syntaxes/pascal.tmLanguage"
+                "language": "blackboxcomponentbuilder",
+                "scopeName": "source.blackboxcomponentbuilder",
+                "path": "./syntaxes/blackboxcomponentbuilder.tmLanguage"
             }
         ],
         "snippets": [
             {
-                "language": "pascal",
-                "path": "./snippets/pascal.json"
+                "language": "blackboxcomponentbuilder",
+                "path": "./snippets/blackboxcomponentbuilder.json"
             }
         ],
         "commands": [
             {
-                "command": "pascal.editFormatterParameters",
-                "title": "Pascal: Edit Formatter Parameters"
+                "command": "blackboxcomponentbuilder.editFormatterParameters",
+                "title": "blackboxcomponentbuilder: Edit Formatter Parameters"
             },
             {
-                "command": "pascal.generateTags",
-                "title": "Pascal: Generate Tags"
+                "command": "blackboxcomponentbuilder.generateTags",
+                "title": "blackboxcomponentbuilder: Generate Tags"
             },
             {
-                "command": "pascal.updateTags",
-                "title": "Pascal: Update Tags"
+                "command": "blackboxcomponentbuilder.updateTags",
+                "title": "blackboxcomponentbuilder: Update Tags"
             },
             {
-                "command": "pascal.whatsNew",
-                "title": "Pascal: What's New"
+                "command": "blackboxcomponentbuilder.whatsNew",
+                "title": "blackboxcomponentbuilder: What's New"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "Pascal",
+            "title": "blackboxcomponentbuilder",
             "properties": {
-                "pascal.formatter.engine": {
+                "blackboxcomponentbuilder.formatter.engine": {
                     "type": "string",
                     "default": "",
                     "description": "Choose the Formatter engine to be used",
@@ -109,32 +101,32 @@
                         "ptop"
                     ]
                 },
-                "pascal.formatter.enginePath": {
+                "blackboxcomponentbuilder.formatter.enginePath": {
                     "type": "string",
                     "default": "",
                     "description": "Indicates the Formatter app path"
                 },
-                "pascal.formatter.engineParameters": {
+                "blackboxcomponentbuilder.formatter.engineParameters": {
                     "type": "string",
                     "default": "",
                     "description": "Indicates the configuration file for the selected engine"
                 },
-                "pascal.format.indent": {
+                "blackboxcomponentbuilder.format.indent": {
                     "type": "number",
                     "default": 2,
                     "description": "The number of spaces used for indentation"
                 },
-                "pascal.format.wrapLineLength": {
+                "blackboxcomponentbuilder.format.wrapLineLength": {
                     "type": "number",
                     "default": 80,
                     "description": "Maximum amount of characters per line"
                 },
-                "pascal.tags.autoGenerate": {
+                "blackboxcomponentbuilder.tags.autoGenerate": {
                     "type": "boolean",
                     "default": true,
                     "description": "Controls if the extension should automatically generate tags in projects opened for the first time"
                 },
-                "pascal.codeNavigation": {
+                "blackboxcomponentbuilder.codeNavigation": {
                     "type": "string",
                     "default": "workspace",
                     "scope": "resource",

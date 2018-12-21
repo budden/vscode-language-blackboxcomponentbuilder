@@ -27,13 +27,13 @@ export class AbstractProvider {
         return new Promise<boolean>((resolve, reject) => {
 
             let uri: vscode.Uri = vscode.Uri.file(filename);
-            if (vscode.workspace.getConfiguration("pascal", uri).get("codeNavigation", "workspace") === "workspace") {
+            if (vscode.workspace.getConfiguration("blackboxcomponentbuilder", uri).get("codeNavigation", "workspace") === "workspace") {
                 if (fs.existsSync(path.join(AbstractProvider.basePathForFilename(filename), "GTAGS"))) {
                     resolve(true);
                     return;
                 }
 
-                let autoGenerate: boolean = vscode.workspace.getConfiguration("pascal").get("tags.autoGenerate", true);
+                let autoGenerate: boolean = vscode.workspace.getConfiguration("blackboxcomponentbuilder").get("tags.autoGenerate", true);
                 if (!autoGenerate) {
                     resolve(false);
                     return;

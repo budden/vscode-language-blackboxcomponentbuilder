@@ -3,6 +3,8 @@
 *  Licensed under the MIT License. See License.md in the project root for license information.
 *--------------------------------------------------------------------------------------------*/
 
+// Ничего пока не пытался с этим делать. 
+
 'use strict';
 
 import vscode = require('vscode');

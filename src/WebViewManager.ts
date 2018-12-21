@@ -1,4 +1,4 @@
-import { ContentProvider } from "../vscode-whats-new/src/ContentProvider";
+/* import { ContentProvider } from "../vscode-whats-new/src/ContentProvider";
 
 export interface WebViewManager {
     registerContentProvider(extensionName: string, contentProvider: ContentProvider): WebViewManager;
@@ -9,4 +9,4 @@ export interface WebViewManager {
 export interface WebViewWhatsNewManager extends WebViewManager{
     showPageInActivation();
     showPageIfVersionDiffers(currentVersion: string, previousVersion: string);
-}
+} */
