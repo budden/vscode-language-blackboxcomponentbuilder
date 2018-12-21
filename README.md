@@ -1,7 +1,16 @@
 <p align="center">
   <br />
-  <a title="Learn more about Pascal" href="http://github.com/alefragnani/vscode-language-pascal"><img src="https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/images/vscode-pascal-logo-readme.png" alt="Pascal Logo" width="70%" /></a>
+  <a title="Режим blackboxcomponentbuilder для Visual Studio Code"></a>
 </p>
+
+# Что здесь есть?
+
+Раскраска компонентного Паскаля (файлы .kp и .cp). Сделано на основе
+режима для обычного Паскаля (см. откуда сделан форк). 
+
+По вопросам установки и разработки см. http://вече.программирование-по-русски.рф/viewtopic.php?f=2&t=22
+
+Далее следует файл ПРОЧТИМЯ от режимя для Паскаля. 
 
 # What's new in Pascal 7
 
