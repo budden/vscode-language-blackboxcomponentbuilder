@@ -19,8 +19,8 @@ import { TagsBuilder } from './tagsBuilder';
 //import { WhatsNewPascalContentProvider } from './whats-new/PascalContentProvider';
 
 const documentSelector = [
-    { language: 'pascal', scheme: 'file' },
-    { language: 'pascal', scheme: 'untitled' }
+    { language: 'blackboxcomponentbuilder', scheme: 'file' },
+    { language: 'blackboxcomponentbuilder', scheme: 'untitled' }
 ];
 
 // this method is called when your extension is activated
@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
                 canRegisterOtherProviders = false;
             }
             if (isSingleWorkspace) {
-                canRegisterOtherProviders = (vscode.workspace.getConfiguration("pascal", 
+                canRegisterOtherProviders = (vscode.workspace.getConfiguration("blackboxcomponentbuilder", 
                     vscode.window.activeTextEditor.document.uri).get("codeNavigation", "workspace") === "workspace");
             } 
             if (isMultirootWorkspace) {
@@ -70,12 +70,12 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     //let provider = new WhatsNewPascalContentProvider();
-    //let viewer = new WhatsNewManager(context).registerContentProvider("pascal", provider);
+    //let viewer = new WhatsNewManager(context).registerContentProvider("blackboxcomponentbuilder", provider);
     //viewer.showPageInActivation();
-    // context.subscriptions.push(vscode.commands.registerCommand('pascal.whatsNew', () => viewer.showPage()));
+    // context.subscriptions.push(vscode.commands.registerCommand('blackboxcomponentbuilder.whatsNew', () => viewer.showPage()));
 
-    vscode.commands.registerCommand('pascal.generateTags', () => generateTags(false));
-    vscode.commands.registerCommand('pascal.updateTags', () => generateTags(true));
+    vscode.commands.registerCommand('blackboxcomponentbuilder.generateTags', () => generateTags(false));
+    vscode.commands.registerCommand('blackboxcomponentbuilder.updateTags', () => generateTags(true));
 
     function generateTags(update: boolean) {
 
@@ -89,7 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
         tagBuilder.generateTags(basePath, update, true);
     }
 
-    vscode.commands.registerCommand('pascal.editFormatterParameters', () => {
+    vscode.commands.registerCommand('blackboxcomponentbuilder.editFormatterParameters', () => {
 
         checkEngineDefined()
             .then((engineType) => {
@@ -102,7 +102,7 @@ export function activate(context: vscode.ExtensionContext) {
                             var optionGenerate = <vscode.MessageItem>{
                                 title: "Generate"
                             };
-                            vscode.window.showErrorMessage('The \"pascal.formatter.engineParameters\" setting is not defined. Would you like to generate the default?', optionGenerate).then(option => {
+                            vscode.window.showErrorMessage('The \"blackboxcomponentbuilder.formatter.engineParameters\" setting is not defined. Would you like to generate the default?', optionGenerate).then(option => {
                                 // nothing selected
                                 if (typeof option == 'undefined') {
                                     return;
@@ -249,7 +249,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new Promise((resolve, reject) => {
 
-            let engineType: string = vscode.workspace.getConfiguration('pascal').get('formatter.engine', '');
+            let engineType: string = vscode.workspace.getConfiguration('blackboxcomponentbuilder').get('formatter.engine', '');
             if (engineType == '') {
                 var optionJCF = <vscode.MessageItem>{
                     title: "Jedi Code Format"
@@ -257,7 +257,7 @@ export function activate(context: vscode.ExtensionContext) {
                 var optionPTOP = <vscode.MessageItem>{
                     title: "FreePascal PtoP"
                 };
-                vscode.window.showErrorMessage('The \"pascal.formatter.engine\" setting is not defined. Do you want to download some formatter tool first?', optionJCF, optionPTOP).then(option => {
+                vscode.window.showErrorMessage('The \"blackboxcomponentbuilder.formatter.engine\" setting is not defined. Do you want to download some formatter tool first?', optionJCF, optionPTOP).then(option => {
                     // nothing selected
                     if (typeof option == 'undefined') {
                         reject('undefined');
@@ -290,16 +290,16 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new Promise((resolve, reject) => {
 
-            let enginePath: string = vscode.workspace.getConfiguration('pascal').get('formatter.enginePath', '');
+            let enginePath: string = vscode.workspace.getConfiguration('blackboxcomponentbuilder').get('formatter.enginePath', '');
             if (enginePath == '') {
-                reject('The \"pascal.formatter.enginePath\" setting is not defined. Please configure.');
+                reject('The \"blackboxcomponentbuilder.formatter.enginePath\" setting is not defined. Please configure.');
                 return;
             }
 
-            let engineParameters: string = vscode.workspace.getConfiguration('pascal').get('formatter.engineParameters', '');
+            let engineParameters: string = vscode.workspace.getConfiguration('blackboxcomponentbuilder').get('formatter.engineParameters', '');
 
-            let formatIndent: number = vscode.workspace.getConfiguration('pascal').get('format.indent', 0);
-            let formatWrapLineLength: number = vscode.workspace.getConfiguration('pascal').get('format.wrapLineLength', 0);
+            let formatIndent: number = vscode.workspace.getConfiguration('blackboxcomponentbuilder').get('format.indent', 0);
+            let formatWrapLineLength: number = vscode.workspace.getConfiguration('blackboxcomponentbuilder').get('format.wrapLineLength', 0);
 
             resolve({
                 'engine': engine,

@@ -7,6 +7,7 @@
 		<string>kp</string>
 		<string>cp</string>
 		<string>mod</string>
+		<string>Mod</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~P</string>

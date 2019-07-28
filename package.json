@@ -52,7 +52,9 @@
                 ],
                 "extensions": [
                     ".kp",
-                    ".cp"
+                    ".cp",
+                    ".mod",
+                    ".Mod"
                 ],
                 "configuration": "./blackboxcomponentbuilder.configuration.json"
             }
