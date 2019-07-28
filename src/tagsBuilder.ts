@@ -19,15 +19,15 @@ export class TagsBuilder {
         return new Promise<string>((resolve, reject) => {
 
             let command: string = update ? "global" : "gtags";
-            let params: string = update ? "--update" : "";
+            let params: any = update ? ["--update"] : [];
 
             if (!TagsBuilder.tagsAvailable(path.join(basePath, 'GTAGS'))) {
                 command = "gtags";
-                params = "";
+                params = [];
             }
 
 			let statusBar: vscode.Disposable = vscode.window.setStatusBarMessage("Generating tags...");
-            let p = cp.execFile(command, [params], { cwd: basePath }, (err, stdout, stderr) => {
+            let p = cp.execFile(command, params, { cwd: basePath }, (err, stdout, stderr) => {
                 try {
 					statusBar.dispose();
 
@@ -144,7 +144,7 @@ export class TagsBuilder {
 							}
 
 							if (option.title === "More Info") {
-								opener("https://github.com/alefragnani/vscode-language-pascal#code-navigation");
+								opener("https://github.com/budden/vscode-language-blackboxcomponentbuilder#code-navigation");
 								return resolve(false);
 							}
 
